@@ -53,22 +53,31 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
   }, []);
 
   const sidebarContent = (
-    <div className="flex h-full w-64 flex-col border-r border-border bg-bg-panel/75 backdrop-blur-md">
-      <div className="flex h-16 shrink-0 items-center justify-between px-6">
-        <div className="flex items-center h-full py-2">
-          <img src="/logo.png" alt="Nexus" className="h-full object-contain max-h-12" />
+    <div className="flex h-full w-64 flex-col border-r border-border/50 bg-bg-panel/95 backdrop-blur-xl shadow-2xl">
+      {/* Brand Header */}
+      <div className="flex h-20 shrink-0 items-center justify-between px-6 border-b border-border/40">
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-light/50 border border-primary/30 shadow-xs">
+            <img src="/logo.png" alt="GridWise Logo" className="h-6 w-6 object-contain" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold tracking-tight text-text-base leading-tight">GridWise</span>
+            <span className="text-[9px] font-semibold text-primary uppercase tracking-widest">AI Microgrid</span>
+          </div>
         </div>
         {onClose && (
           <button 
             onClick={onClose}
-            className="lg:hidden rounded-md p-2 text-text-muted hover:bg-bg-base"
+            className="lg:hidden rounded-lg p-2 text-text-muted hover:bg-bg-base transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
           >
-            <X className="h-6 w-6" />
+            <X className="h-5 w-5" />
           </button>
         )}
       </div>
-      <div className="flex flex-1 flex-col overflow-y-auto px-4 py-4">
-        <nav className="flex-1 space-y-1">
+
+      {/* Navigation */}
+      <div className="flex flex-1 flex-col overflow-y-auto px-4 py-6 scrollbar-hide">
+        <nav className="flex-1 space-y-1.5">
           {navigation.map((item) => (
             <NavLink
               key={item.name}
@@ -79,9 +88,9 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
               className={({ isActive }) =>
                 cn(
                   isActive
-                    ? 'bg-primary-light text-primary'
-                    : 'text-text-base hover:bg-bg-base hover:text-text-base',
-                  'group flex items-center rounded-md px-2 py-2 text-sm font-medium transition-colors'
+                    ? 'bg-primary/10 text-primary border border-primary/20 shadow-inner'
+                    : 'text-text-muted hover:bg-bg-base/80 hover:text-text-base border border-transparent',
+                  'group flex items-center rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-300'
                 )
               }
             >
@@ -89,43 +98,57 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
                 <>
                   <item.icon
                     className={cn(
-                      isActive ? 'text-primary' : 'text-text-muted group-hover:text-text-muted',
-                      'mr-3 h-5 w-5 flex-shrink-0 transition-colors'
+                      isActive ? 'text-primary' : 'text-text-muted group-hover:text-text-base',
+                      'mr-3 h-5 w-5 flex-shrink-0 transition-colors duration-300'
                     )}
                     aria-hidden="true"
                   />
-                  {item.name}
+                  <span className={cn("transition-transform duration-300", isActive ? "translate-x-1" : "group-hover:translate-x-1")}>
+                    {item.name}
+                  </span>
                 </>
               )}
             </NavLink>
           ))}
         </nav>
       </div>
-      <div className="shrink-0 border-t border-border p-4">
+
+      {/* Footer / System Health */}
+      <div className="shrink-0 p-4">
         <a 
           href="/health" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center text-sm font-medium text-text-base hover:text-text-base cursor-pointer transition-colors"
+          className="flex items-center justify-between rounded-xl border border-border/60 bg-bg-base/50 p-3 hover:bg-bg-base hover:border-primary/40 transition-all cursor-pointer group shadow-sm"
         >
-          {healthStatus === 'checking' && (
-            <>
-              <Loader2 className="mr-2 h-5 w-5 text-text-muted animate-spin" />
-              Checking System...
-            </>
-          )}
-          {healthStatus === 'healthy' && (
-            <>
-              <Activity className="mr-2 h-5 w-5 text-green-500" />
-              System Healthy
-            </>
-          )}
-          {healthStatus === 'error' && (
-            <>
-              <AlertCircle className="mr-2 h-5 w-5 text-red-500" />
-              System Offline
-            </>
-          )}
+          <div className="flex flex-col">
+            <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-0.5">System Status</span>
+            <div className="flex items-center text-xs font-semibold text-text-base group-hover:text-primary transition-colors">
+              {healthStatus === 'checking' && (
+                <>
+                  <Loader2 className="mr-1.5 h-3.5 w-3.5 text-text-muted animate-spin" />
+                  Checking...
+                </>
+              )}
+              {healthStatus === 'healthy' && (
+                <>
+                  <Activity className="mr-1.5 h-3.5 w-3.5 text-green-500" />
+                  Healthy
+                </>
+              )}
+              {healthStatus === 'error' && (
+                <>
+                  <AlertCircle className="mr-1.5 h-3.5 w-3.5 text-red-500" />
+                  Offline
+                </>
+              )}
+            </div>
+          </div>
+          <div className={cn(
+            "h-2 w-2 rounded-full",
+            healthStatus === 'checking' ? 'bg-amber-400 animate-pulse' :
+            healthStatus === 'healthy' ? 'bg-green-500 animate-pulse' : 'bg-red-500'
+          )} />
         </a>
       </div>
     </div>
@@ -136,7 +159,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
       {/* Mobile Backdrop */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-slate-900/80 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm lg:hidden transition-opacity"
           onClick={onClose}
         />
       )}

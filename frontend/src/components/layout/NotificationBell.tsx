@@ -111,10 +111,10 @@ export function NotificationBell() {
     <div className="relative" ref={dropdownRef}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex items-center justify-center h-10 w-10 rounded-full text-text-muted hover:bg-bg-base hover:text-text-muted transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        className="relative flex items-center justify-center rounded-full p-2.5 text-text-muted bg-bg-base/50 border border-border/60 hover:bg-bg-base hover:text-primary hover:border-primary/50 shadow-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Notifications"
       >
-        <Bell className="h-5 w-5" />
+        <Bell className="h-4 w-4" />
         {unreadCount > 0 && (
           <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white ring-2 ring-white">
             {unreadCount > 9 ? '9+' : unreadCount}

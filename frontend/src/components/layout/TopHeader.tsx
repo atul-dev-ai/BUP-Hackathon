@@ -26,33 +26,34 @@ export function TopHeader({ onMenuClick }: TopHeaderProps) {
   }, [isDark]);
 
   return (
-    <header className="relative z-30 flex h-16 shrink-0 items-center justify-between border-b border-border bg-bg-panel/85 backdrop-blur-md px-4 sm:px-6 lg:px-8">
+    <header className="relative z-30 flex h-18 shrink-0 items-center justify-between border-b border-border/40 bg-bg-panel/95 backdrop-blur-xl px-4 sm:px-6 lg:px-8 shadow-sm">
       <div className="flex flex-1 items-center">
         {onMenuClick && (
           <button 
             onClick={onMenuClick}
-            className="mr-4 rounded-md p-2 text-text-muted hover:bg-bg-base lg:hidden focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            className="mr-4 rounded-xl p-2.5 text-text-muted hover:bg-bg-base lg:hidden focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300"
           >
             <span className="sr-only">Open sidebar</span>
-            <Menu className="h-6 w-6" aria-hidden="true" />
+            <Menu className="h-5 w-5" aria-hidden="true" />
           </button>
         )}
-        <h1 className="text-lg font-semibold text-text-base truncate">
+        <h1 className="text-xl font-extrabold tracking-tight text-text-base truncate">
           Campus Energy Control
         </h1>
         {lastResult && (
-          <div className="ml-4 hidden sm:flex items-center rounded-full bg-bg-base px-3 py-1 text-xs font-medium text-text-base">
-            Scenario: <span className="ml-1 text-text-base font-semibold truncate max-w-[150px]">{lastResult.scenario_id}</span>
+          <div className="ml-5 hidden sm:flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary shadow-xs">
+            <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            <span>Scenario: <span className="text-text-base ml-1">{lastResult.scenario_id}</span></span>
           </div>
         )}
       </div>
-      <div className="flex items-center space-x-2 sm:space-x-4 ml-4">
+      <div className="flex items-center space-x-3 ml-4">
         <button 
           onClick={() => setIsDark(!isDark)}
-          className="rounded-full p-2 text-text-muted hover:bg-bg-base hover:text-primary transition-colors"
+          className="rounded-full p-2.5 text-text-muted bg-bg-base/50 border border-border/60 hover:bg-bg-base hover:text-primary hover:border-primary/50 shadow-xs transition-all duration-300"
           title="Toggle Theme"
         >
-          {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
         </button>
         <NotificationBell />
       </div>
