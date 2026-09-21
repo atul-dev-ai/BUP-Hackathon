@@ -33,7 +33,7 @@ export function LandingFooter() {
           </div>
 
           {/* Quick Navigation Links */}
-          <div className="flex flex-wrap justify-center md:justify-center gap-x-8 gap-y-4 text-sm font-semibold text-text-muted">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm font-semibold text-text-muted">
             <Link to="/dashboard" className="hover:text-primary transition-colors">Dashboard</Link>
             <Link to="/optimize" className="hover:text-primary transition-colors">Optimize</Link>
             <button onClick={() => scrollToSection('how-it-works')} className="hover:text-primary transition-colors cursor-pointer">How It Works</button>

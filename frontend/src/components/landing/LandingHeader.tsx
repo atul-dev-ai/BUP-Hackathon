@@ -74,40 +74,40 @@ export function LandingHeader() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden lg:flex items-center justify-center gap-1 rounded-full border border-border/60 bg-bg-base/40 px-1.5 py-1.5 shadow-xs backdrop-blur-md">
           <Link
             to="/dashboard"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted hover:text-text-base hover:bg-bg-base/70 transition-colors"
+            className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all"
           >
             Dashboard
           </Link>
           <Link
             to="/optimize"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted hover:text-text-base hover:bg-bg-base/70 transition-colors"
+            className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all"
           >
             Optimize
           </Link>
           <button
             onClick={() => scrollToSection('how-it-works')}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted hover:text-text-base hover:bg-bg-base/70 transition-colors cursor-pointer"
+            className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all cursor-pointer"
           >
             How It Works
           </button>
           <button
             onClick={() => scrollToSection('energy-system')}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted hover:text-text-base hover:bg-bg-base/70 transition-colors cursor-pointer"
+            className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all cursor-pointer"
           >
             Energy System
           </button>
           <button
             onClick={() => scrollToSection('capabilities')}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted hover:text-text-base hover:bg-bg-base/70 transition-colors cursor-pointer"
+            className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all cursor-pointer"
           >
             Capabilities
           </button>
           <button
             onClick={() => scrollToSection('team')}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted hover:text-text-base hover:bg-bg-base/70 transition-colors cursor-pointer"
+            className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all cursor-pointer"
           >
             Team
           </button>
