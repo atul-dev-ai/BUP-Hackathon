@@ -54,27 +54,30 @@ export function LandingHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-bg-panel/90 backdrop-blur-md transition-all">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-4 z-50 w-full transition-all px-4 sm:px-6 lg:px-8 pointer-events-none">
+      <div className="mx-auto flex max-w-7xl items-center justify-between pointer-events-auto">
         
-        {/* Brand / Logo */}
-        <Link to="/" className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-green-600 rounded-lg p-1">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-light border border-primary shadow-xs group-hover:border-green-300 transition-colors">
-            <img src="/logo.png" alt="GridWise Logo" className="h-7 w-7 object-contain" />
+        {/* Left Pill: Brand / Logo */}
+        <Link 
+          to="/" 
+          className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-green-600 rounded-full border border-border/60 bg-bg-panel/80 backdrop-blur-md px-2 py-1.5 shadow-sm hover:border-primary/50 transition-colors"
+        >
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-light border border-primary shadow-xs group-hover:border-green-300 transition-colors">
+            <img src="/logo.png" alt="GridWise Logo" className="h-6 w-6 object-contain" />
           </div>
-          <div>
+          <div className="pr-2">
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold tracking-tight text-text-base">GridWise</span>
-              <span className="hidden sm:inline-flex items-center rounded-full bg-primary-light px-2 py-0.5 text-xs font-semibold text-primary border border-primary">
+              <span className="text-lg font-bold tracking-tight text-text-base">GridWise</span>
+              <span className="hidden xl:inline-flex items-center rounded-full bg-primary-light px-2 py-0.5 text-[10px] font-semibold text-primary border border-primary">
                 AI Microgrid
               </span>
             </div>
-            <p className="text-[11px] font-medium text-text-muted tracking-wide hidden sm:block">Campus Energy Optimization</p>
+            <p className="text-[10px] font-medium text-text-muted tracking-wide hidden lg:block">Campus Energy Optimization</p>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center gap-1 rounded-full border border-border/60 bg-bg-base/40 px-1.5 py-1.5 shadow-xs backdrop-blur-md">
+        {/* Center Pill: Desktop Navigation */}
+        <nav className="hidden lg:flex items-center justify-center gap-1 rounded-full border border-border/60 bg-bg-panel/80 px-1.5 py-1.5 shadow-sm backdrop-blur-md">
           <Link
             to="/dashboard"
             className="rounded-full px-4 py-1.5 text-sm font-semibold text-text-muted hover:text-primary hover:bg-primary-light/50 transition-all"
@@ -113,8 +116,8 @@ export function LandingHeader() {
           </button>
         </nav>
 
-        {/* Right CTA Area */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Right Pill: Theme & CTA (Desktop) */}
+        <div className="hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-bg-panel/80 px-2 py-1.5 shadow-sm backdrop-blur-md">
           <button 
             onClick={() => setIsDark(!isDark)}
             className="rounded-full p-2 text-text-muted hover:bg-bg-base hover:text-primary transition-colors"
@@ -123,31 +126,17 @@ export function LandingHeader() {
             {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
           
-          {/* Health indicator badge */}
-          <div className="hidden lg:flex items-center gap-1.5 rounded-full bg-bg-base/80 px-2.5 py-1 text-xs font-medium text-text-muted border border-border">
-            <span
-              className={`h-2 w-2 rounded-full ${
-                isHealthy === null
-                  ? 'bg-amber-400 animate-pulse'
-                  : isHealthy
-                  ? 'bg-green-500 animate-pulse'
-                  : 'bg-red-500'
-              }`}
-            />
-            <span>{isHealthy === null ? 'Engine Connecting' : isHealthy ? 'Solver Ready' : 'Offline'}</span>
-          </div>
-
           <Link
             to="/optimize"
-            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-green-700 px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 hover:shadow-md hover:shadow-green-700/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-green-700 px-5 py-2 text-sm font-bold text-white shadow-xs hover:bg-green-600 hover:shadow-md hover:shadow-green-700/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300"
           >
             <Zap className="h-4 w-4 fill-current text-green-200 group-hover:scale-110 transition-transform duration-300" />
             <span>Launch Optimizer</span>
           </Link>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex sm:hidden items-center gap-2">
+        {/* Right Pill: Mobile Only */}
+        <div className="flex sm:hidden items-center gap-1 rounded-full border border-border/60 bg-bg-panel/80 px-1.5 py-1.5 shadow-sm backdrop-blur-md">
           <button 
             onClick={() => setIsDark(!isDark)}
             className="rounded-full p-1.5 text-text-muted hover:bg-bg-base hover:text-primary transition-colors"
@@ -157,7 +146,7 @@ export function LandingHeader() {
           </button>
           <Link
             to="/optimize"
-            className="inline-flex items-center justify-center rounded-lg bg-green-700 px-3 py-1.5 text-xs font-semibold text-white shadow-xs"
+            className="inline-flex items-center justify-center rounded-full bg-green-700 px-3 py-1.5 text-xs font-bold text-white shadow-xs"
           >
             <Zap className="h-3.5 w-3.5 mr-1" />
             Launch
@@ -165,10 +154,10 @@ export function LandingHeader() {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(true)}
-            className="rounded-lg p-2 text-text-muted hover:bg-bg-base hover:text-text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+            className="rounded-full p-1.5 text-text-muted hover:bg-bg-base hover:text-text-base focus:outline-none focus:ring-2 focus:ring-green-600"
             aria-label="Open navigation menu"
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" />
           </button>
         </div>
 
