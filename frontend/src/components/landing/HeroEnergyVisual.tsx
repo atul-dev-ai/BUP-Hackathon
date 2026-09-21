@@ -15,12 +15,12 @@ export function HeroEnergyVisual() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
-    <div className="relative w-full max-w-lg mx-auto lg:max-w-none rounded-2xl bg-gradient-to-b from-white to-slate-50 p-6 sm:p-8 border border-border/90 shadow-xl overflow-hidden">
+    <div className="relative w-full max-w-lg mx-auto lg:max-w-none rounded-2xl bg-bg-panel p-6 sm:p-8 border border-border/90 shadow-xl overflow-hidden">
       {/* Background Microgrid Grid Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#15803d_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.05] pointer-events-none" />
       
       {/* Simulation Header Banner */}
-      <div className="relative z-10 flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+      <div className="relative z-10 flex items-center justify-between pb-4 mb-4 border-b border-border/60">
         <div className="flex items-center gap-2">
           <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
           <span className="text-xs font-semibold uppercase tracking-wider text-text-base">Microgrid Telemetry Demo</span>
@@ -183,7 +183,7 @@ export function HeroEnergyVisual() {
       </div>
 
       {/* Physics Conservation Equation Bar */}
-      <div className="mt-3 pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-text-muted">
+      <div className="mt-3 pt-3 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-text-muted">
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="h-3.5 w-3.5 text-green-600" />
           <span className="font-mono text-text-base font-medium">Grid (22.5) + Solar (45) + Battery (15) = Demand (82.5) kW</span>
