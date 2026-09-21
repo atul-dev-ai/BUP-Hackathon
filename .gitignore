@@ -19,6 +19,7 @@ env/
 
 # Environment variables (NEVER commit secrets)
 .env
+.env.*
 
 # IDE
 .vscode/
