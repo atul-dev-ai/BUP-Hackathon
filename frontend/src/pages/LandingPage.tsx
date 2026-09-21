@@ -27,7 +27,7 @@ export default function LandingPage() {
       <main>
         
         {/* HERO SECTION */}
-        <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 overflow-hidden bg-gradient-to-b from-bg-panel via-bg-panel to-bg-base border-b border-border/80">
+        <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 overflow-hidden border-b border-border/80">
           
           {/* Subtle Accent Glow */}
           <div className="absolute top-0 right-1/4 -mt-24 h-96 w-96 rounded-full bg-primary-light/70 blur-3xl pointer-events-none -z-10" />
