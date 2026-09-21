@@ -27,7 +27,7 @@ export default function LandingPage() {
       <main>
         
         {/* HERO SECTION */}
-        <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 overflow-hidden bg-gradient-to-b from-white via-white to-slate-50 border-b border-border/80">
+        <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 overflow-hidden bg-gradient-to-b from-bg-panel via-bg-panel to-bg-base border-b border-border/80">
           
           {/* Subtle Accent Glow */}
           <div className="absolute top-0 right-1/4 -mt-24 h-96 w-96 rounded-full bg-primary-light/70 blur-3xl pointer-events-none -z-10" />
@@ -78,17 +78,17 @@ export default function LandingPage() {
                 </div>
 
                 {/* Trust & Architecture Pills */}
-                <div className="mt-10 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-4 text-xs font-medium text-text-muted">
+                <div className="mt-10 pt-6 border-t border-border/60 flex flex-wrap items-center gap-4 text-xs font-medium text-text-muted">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-green-600" />
                     <span>13 Zero-Trust Guardrails</span>
                   </div>
-                  <span className="text-slate-300">•</span>
+                  <span className="text-border">•</span>
                   <div className="flex items-center gap-1.5">
                     <Cpu className="h-4 w-4 text-green-600" />
                     <span>PuLP & CBC Solver</span>
                   </div>
-                  <span className="text-slate-300">•</span>
+                  <span className="text-border">•</span>
                   <div className="flex items-center gap-1.5">
                     <Layers className="h-4 w-4 text-green-600" />
                     <span>24-Hour Plan Horizon</span>
