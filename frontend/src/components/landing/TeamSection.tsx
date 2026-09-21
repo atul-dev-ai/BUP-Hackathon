@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, ShieldCheck } from 'lucide-react';
+import { Users, Award, ShieldCheck, Github, Linkedin } from 'lucide-react';
 import { teamMembers } from '../../data/teamData';
 
 export function TeamSection() {
@@ -53,12 +53,26 @@ export function TeamSection() {
                   <p className="mt-3 text-xs text-text-muted leading-relaxed">
                     {member.description}
                   </p>
+
+                  {/* Social Links */}
+                  <div className="mt-4 flex items-center justify-center gap-4">
+                    {member.github && (
+                      <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors" title="GitHub Profile">
+                        <Github className="h-4 w-4" />
+                      </a>
+                    )}
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-[#0A66C2] transition-colors" title="LinkedIn Profile">
+                        <Linkedin className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
 
               {/* Focus Area Tag */}
               {member.focusArea && (
-                <div className="mt-5 pt-3 border-t border-slate-100 text-center">
+                <div className="mt-5 pt-3 border-t border-slate-100 dark:border-border/60 text-center">
                   <span className="inline-flex items-center gap-1 rounded-full bg-bg-base px-2.5 py-0.5 text-[10px] font-medium text-text-muted group-hover:bg-primary-light group-hover:text-primary transition-colors">
                     <Award className="h-3 w-3 text-green-600" />
                     <span>{member.focusArea}</span>
