@@ -28,18 +28,19 @@ export function FinalCTASection() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/optimize"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover active:scale-[0.98] transition-all"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300"
           >
-            <Zap className="h-5 w-5 fill-current text-white/80" />
+            <Zap className="h-5 w-5 fill-current text-white/80 group-hover:scale-110 transition-transform duration-300" />
             <span>Launch Optimizer</span>
-            <ArrowRight className="h-5 w-5" />
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
 
           <Link
             to="/dashboard"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bg-base px-6 py-4 text-base font-medium text-text-base border border-border hover:bg-border/40 transition-all"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bg-base px-6 py-4 text-base font-medium text-text-base border border-border hover:bg-border/40 hover:border-primary/50 hover:text-primary hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300"
           >
             <span>View Telemetry Dashboard</span>
+            <ArrowRight className="h-4 w-4 text-text-muted hidden sm:block group-hover:text-primary group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
 

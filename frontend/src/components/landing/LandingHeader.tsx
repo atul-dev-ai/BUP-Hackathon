@@ -139,9 +139,9 @@ export function LandingHeader() {
 
           <Link
             to="/optimize"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-700 px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 transition-all active:scale-[0.98]"
+            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-green-700 px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 hover:shadow-md hover:shadow-green-700/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300"
           >
-            <Zap className="h-4 w-4 fill-current text-green-200" />
+            <Zap className="h-4 w-4 fill-current text-green-200 group-hover:scale-110 transition-transform duration-300" />
             <span>Launch Optimizer</span>
           </Link>
         </div>

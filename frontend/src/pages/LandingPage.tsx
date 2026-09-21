@@ -62,18 +62,18 @@ export default function LandingPage() {
                 <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
                   <Link
                     to="/optimize"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-700 px-7 py-3.5 text-base font-bold text-white shadow-md shadow-green-700/20 hover:bg-green-800 active:scale-[0.98] transition-all"
+                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-green-700 px-7 py-3.5 text-base font-bold text-white shadow-md shadow-green-700/20 hover:bg-green-600 hover:shadow-xl hover:shadow-green-700/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300"
                   >
-                    <Zap className="h-5 w-5 fill-current text-green-200" />
+                    <Zap className="h-5 w-5 fill-current text-green-200 group-hover:scale-110 transition-transform duration-300" />
                     <span>⚡ Optimize Energy</span>
                   </Link>
 
                   <button
                     onClick={() => scrollToSection('how-it-works')}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-bg-panel px-6 py-3.5 text-base font-semibold text-text-base border border-border hover:bg-bg-base hover:text-text-base shadow-2xs transition-all cursor-pointer"
+                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-bg-panel px-6 py-3.5 text-base font-semibold text-text-base border border-border hover:bg-bg-base hover:text-primary hover:border-primary/50 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 cursor-pointer"
                   >
                     <span>How It Works</span>
-                    <ArrowRight className="h-4 w-4 text-text-muted" />
+                    <ArrowRight className="h-4 w-4 text-text-muted group-hover:text-primary group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
 
