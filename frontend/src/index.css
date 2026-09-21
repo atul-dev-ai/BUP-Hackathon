@@ -1,22 +1,52 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #15803d; /* green-700 */
-  --color-primary-hover: #166534; /* green-800 */
-  --color-primary-light: #dcfce7; /* green-100 */
+  --color-primary: var(--color-primary-val);
+  --color-primary-hover: var(--color-primary-hover-val);
+  --color-primary-light: var(--color-primary-light-val);
   
-  --color-bg-base: #f8fafc; /* slate-50 */
-  --color-bg-panel: #ffffff;
+  --color-bg-base: var(--color-bg-base-val);
+  --color-bg-panel: var(--color-bg-panel-val);
   
-  --color-text-base: #1e293b; /* slate-800 */
-  --color-text-muted: #64748b; /* slate-500 */
+  --color-text-base: var(--color-text-base-val);
+  --color-text-muted: var(--color-text-muted-val);
   
-  --color-border: #e2e8f0; /* slate-200 */
+  --color-border: var(--color-border-val);
 }
 
 @layer base {
+  :root {
+    --color-primary-val: #15803d; 
+    --color-primary-hover-val: #166534; 
+    --color-primary-light-val: #dcfce7; 
+    
+    --color-bg-base-val: #f8fafc; 
+    --color-bg-panel-val: #ffffff;
+    
+    --color-text-base-val: #1e293b; 
+    --color-text-muted-val: #64748b; 
+    
+    --color-border-val: #e2e8f0; 
+  }
+
+  .dark {
+    --color-primary-val: #10b981; 
+    --color-primary-hover-val: #34d399; 
+    --color-primary-light-val: rgba(16, 185, 129, 0.15); 
+    
+    /* Elegant Dark Slate (Not completely black) */
+    --color-bg-base-val: #0f172a; 
+    --color-bg-panel-val: #1e293b;
+    
+    --color-text-base-val: #f8fafc; 
+    --color-text-muted-val: #94a3b8; 
+    
+    --color-border-val: #334155; 
+  }
+
   body {
-    background-color: var(--color-bg-base);
-    color: var(--color-text-base);
+    background-color: var(--color-bg-base-val);
+    color: var(--color-text-base-val);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
