@@ -8,6 +8,13 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
+    name: "Atul Paul",
+    role: "Full Stack Web Developer & UI/UX Designer",
+    image: "/team/atul-paul.png",
+    description: "Designed and built the responsive command center dashboard, glassmorphic UI components, and real-time telemetry charts.",
+    focusArea: "UI/UX & Interactive Telemetry"
+  },
+  {
     name: "Fayek Ahanaf",
     role: "Lead AI Engineer & System Architect",
     image: "/team/fayek-ahanaf.jpg",
@@ -27,12 +34,5 @@ export const teamMembers: TeamMember[] = [
     image: "/team/nafisa-tabassum.png",
     description: "Spearheaded campus electricity load profiling, solar generation modeling, and statistical validation metrics.",
     focusArea: "Energy Modeling & Validation"
-  },
-  {
-    name: "Atul Paul",
-    role: "Frontend Developer & UI/UX Designer",
-    image: "/team/atul-paul.png",
-    description: "Designed and built the responsive command center dashboard, glassmorphic UI components, and real-time telemetry charts.",
-    focusArea: "UI/UX & Interactive Telemetry"
   }
 ];
